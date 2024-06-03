@@ -162,7 +162,7 @@ public class ProdottoDao implements ProdottoDaoInterfaccia{
 			preparedStatement = connection.prepareStatement(selectSQL);
 
 			
-			
+			 
 			preparedStatement.setString(1, selectSQL);
 			ResultSet rs = preparedStatement.executeQuery();
 
