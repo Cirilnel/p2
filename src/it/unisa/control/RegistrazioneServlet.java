@@ -59,6 +59,9 @@ public class RegistrazioneServlet extends HttpServlet {
 			
 		}catch(SQLException e) {
 			System.out.println("Error:" + e.getMessage());
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 				
 		response.sendRedirect(request.getContextPath() + "/Home.jsp");

@@ -32,12 +32,15 @@ public class LoginServlet extends HttpServlet {
 		
 		try
 		{	    
-		     user.setPassword(Arrays.toString(md.digest(request.getParameter("pw").getBytes())));
+
+		     UserBean user = new UserBean();
+		     
 		     
 		     
 		     MessageDigest md = MessageDigest.getInstance("SHA-512");
+
 		     user.setUsername(request.getParameter("un"));
-		     user.setPassword(request.getParameter("pw"));
+		     user.setPassword(Arrays.toString(md.digest(request.getParameter("pw").getBytes())));
 		     user = usDao.doRetrieve(request.getParameter("un"),request.getParameter("pw"));
 			   		    
 		    
@@ -62,6 +65,9 @@ public class LoginServlet extends HttpServlet {
 				
 		catch(SQLException e) {
 			System.out.println("Error:" + e.getMessage());
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		  }
 	}
