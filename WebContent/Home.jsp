@@ -4,7 +4,8 @@
     <%
 	ArrayList<ArrayList<ProdottoBean>> categorie = (ArrayList<ArrayList<ProdottoBean>>) request.getSession().getAttribute("categorie");
 	if(categorie == null) {
-		response.sendRedirect("./home?page=Home.jsp");	
+	
+		response.sendRedirect("./home");
 		return;
 	}
 %>
